@@ -1,16 +1,25 @@
 def heapsort(arr):
   # init heap
   heap = Heap()
+  # init our sorted array to have length equal to our input array
   sorted = []
+  for el in arr: # O(n)
+    heap.insert(el) # O(log n)
+  # ^^^ O(n log n) ^^^ (lines 6+7)
+  while heap.get_size() > 0: # O(n)
+    sorted.insert(0, heap.delete()) # O(n)
+  # ^^^ O(n^2) ^^^
+  return sorted
 
-  for el in arr:
-    heap.insert(el)
-
-  while heap.get_size() > 0:
-    sorted.append(heap.delete())
-
-  sorted.reverse()
-
+def alt_heapsort(arr):
+  heap = Heap()
+  sorted = [0] * len(arr) # constant O(1)
+  for el in arr: # O(n)
+    heap.insert(el) # O(n)
+  # ^^^ O(n log n) ^^^(lines 17+18)
+  for i in range(len(arr)): # O(n)
+    sorted[len(arr) - i - 1] = heap.delete() # O(n log n)
+    # ^O(1)                    ^ O(log n)
   return sorted
 
 class Heap:
