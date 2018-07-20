@@ -13,7 +13,16 @@ class BinarySearchTree:
     return
 
   def breadth_first_for_each(self, cb):
-    pass
+    # cb(self.value)
+    # this_lvl = [self.left, self.right]
+    # while this_lvl:
+    #   nxt_lvl = []
+    #   for n in this_lvl:
+    #     if n.left:
+    #       nxt_lvl.append(n.left)
+    #     if n.right:
+    #       nxt_lvl.append(n.right)
+    #   this_lvl = nxt_lvl
 
   def insert(self, value):
     new_tree = BinarySearchTree(value)
