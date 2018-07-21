@@ -18,9 +18,9 @@ class BinarySearchTree:
     stack = []
     # we're at the top-most node(root node)
     # append root node
-    stack.appen(self)
+    stack.append(self)
     # iterate through elements in stack
-    while len(stack)
+    while len(stack):
       # pop off top-most stack element
       current_node = stack.pop()
       # check if node has right child
